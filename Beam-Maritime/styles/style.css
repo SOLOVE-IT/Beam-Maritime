@@ -1,10 +1,4 @@
 /* ==== Reset & Global Styles ==== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -13,155 +7,59 @@ body {
     color: #222;
 }
 
-h2,
-h3 {
-    color: #4169E1;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-section {
-    padding: 60px 20px;
-}
-
-.navbar {
+/* === Header Section === */
+.header {
+    background-color: #007bff;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #4169E1;
-    padding: 15px 30px;
+}
+
+.header img {
+    height: 100px;
+}
+
+.nav-links a {
     color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
+.nav-links a:hover {
+    color: #cce4ff;
 }
 
-.logo img {
-    height: 60px;
-}
-
-.nav-wrapper .nav-btn {
-    background-color: #40E0D0;
-    color: white;
-    padding: 10px 20px;
+.email-btn {
+    background-color: white;
+    color: #007bff;
+    padding: 8px 16px;
     border-radius: 5px;
+    text-decoration: none;
     font-weight: bold;
     transition: background 0.3s ease;
 }
 
-.nav-wrapper .nav-btn:hover {
-    background-color: #2ab7b1;
+.email-btn:hover {
+    background-color: #f0f0f0;
 }
 
-.bar {
-    background-color: #f1f8ff;
-    padding: 15px 30px;
+/* === Breadcrumb Section === */
+.breadcrumb {
+    background-color: #e0eaff;
+    padding: 12px 20px;
 }
 
-.breadcrumb a,
-.breadcrumb span {
-    color: #4169E1;
+.breadcrumb p {
     font-size: 14px;
+    margin-bottom: 5px;
 }
 
-#home {
-    position: relative;
+.breadcrumb p:first-child {
+    font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Hero Section */
-#heroCarousel {
-    position: relative;
-    top: 0;
-    margin-top: 0;
-    height: 80vh;
-    overflow: hidden;
-}
-
-#heroCarousel .carousel-item img {
-    height: 80vh;
-    object-fit: cover;
-    filter: brightness(60%);
-}
-
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    color: #fff;
-    text-align: center;
-}
-
-.carousel-caption {
-    top: 50%;
-    transform: translateY(-50%);
-    bottom: auto;
-    text-align: center;
-    animation: fadeInUp 1.5s ease-out;
-}
-
-.carousel-caption h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #000000;
-    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
-}
-
-.carousel-caption p {
-    font-size: 1.25rem;
-    color: #000000;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
-}
-
-/* Caption Animation */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(-50%);
-    }
-}
-
-
-@media (max-width: 768px) {
-    .carousel-caption {
-        bottom: 20%;
-    }
-
-    .carousel-caption h2 {
-        font-size: 1.5rem;
-    }
-
-    .carousel-caption p {
-        font-size: 1rem;
-    }
-}
-
-
-
 
 /* ==== About Section ==== */
 .about {
@@ -192,7 +90,6 @@ section {
 
 
 
-
 /* ==== Services Section ==== */
 .services {
     padding: 4rem 5%;
@@ -215,15 +112,16 @@ section {
 /* Base Service Card */
 .service {
     --glow-color: #000;
-    /* default fallback */
     background: #ffffff;
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 0 30px var(--glow-color), 0 0 60px var(--glow-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* <- normal shadow */
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     will-change: transform, box-shadow;
 }
+
 
 /* Icon styles */
 .service i {
@@ -235,9 +133,11 @@ section {
 
 /* Glow on hover */
 .service:hover {
-    transform: translateY(-10px);
-    animation: glowPulse 1.5s infinite ease-in-out;
+  transform: translateY(-10px);
+  animation: glowPulse 1.5s infinite ease-in-out;
+  box-shadow: 0 0 30px var(--glow-color), 0 0 60px var(--glow-color);
 }
+
 
 
 .service:hover i {
